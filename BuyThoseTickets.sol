@@ -28,6 +28,7 @@ contract BuyThoseTickets is Owner {
      * It can only be called by the owner of the contract.
      */
     function addEvent(string memory name, uint256 date, uint256 amountOfTickets, uint256 ticketPrice) public isOwner returns (bool) {
+        // if the events[name] already exists the data will be override, but I don't care about this at the moment.
         Event storage newEvent = events[name];
         newEvent.name = name;
         newEvent.date = date;
